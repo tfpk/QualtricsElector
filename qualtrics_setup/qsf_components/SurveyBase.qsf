@@ -1,0 +1,196 @@
+{
+  "SurveyEntry": {
+    "SurveyID": "SV_bsE2ISiwnAAAAAA",
+    "SurveyName": "Example Election",
+    "SurveyDescription": null,
+    "SurveyOwnerID": "UR_6JTLkTI1gAAAAAA",
+    "SurveyBrandID": "unsw",
+    "DivisionID": null,
+    "SurveyLanguage": "EN",
+    "SurveyActiveResponseSet": "RS_cAVWZJgVQCAAAAA",
+    "SurveyStatus": "Inactive",
+    "SurveyStartDate": ["REPLACE", "start_date", "2021-04-22 00:00:00"],
+    "SurveyExpirationDate": ["REPLACE", "end_date", "2021-04-23 00:00:00"],
+    "SurveyCreationDate": "2021-10-12 04:08:11",
+    "CreatorID": "UR_6JTLkTI1gAAAAAA",
+    "LastModified": "2021-10-12 04:10:12",
+    "LastAccessed": "0000-00-00 00:00:00",
+    "LastActivated": "0000-00-00 00:00:00",
+    "Deleted": null
+  },
+  "SurveyElements": [
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "BL",
+      "PrimaryAttribute": "Survey Blocks",
+      "SecondaryAttribute": null,
+      "TertiaryAttribute": null,
+      "Payload": [
+        {
+          "Type": "Default",
+          "Description": "Default Question Block",
+          "ID": "BL_1HcPlwaCcWBAAAA",
+          "BlockElements": [
+            "REPLACE",
+            "question_blocks",
+            {
+               "Type": "Question",
+               "QuestionID": "QID1"
+            }
+          ]
+        },
+        {
+          "Type": "Trash",
+          "Description": "Trash / Unused Questions",
+          "ID": "BL_4GwZeAaO3w10000"
+        }
+      ]
+    },
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "FL",
+      "PrimaryAttribute": "Survey Flow",
+      "SecondaryAttribute": null,
+      "TertiaryAttribute": null,
+      "Payload": {
+        "Flow": [
+          {
+            "ID": "BL_1HcPlwaCcWBAAAA",
+            "Type": "Block",
+            "FlowID": "FL_2"
+          }
+        ],
+        "Properties": {
+          "Count": 2
+        },
+        "FlowID": "FL_1",
+        "Type": "Root"
+      }
+    },
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "RS",
+      "PrimaryAttribute": "RS_cAVWZJgVQCAAAAA",
+      "SecondaryAttribute": null,
+      "TertiaryAttribute": null,
+      "Payload": null
+    },
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "SO",
+      "PrimaryAttribute": "Survey Options",
+      "SecondaryAttribute": null,
+      "TertiaryAttribute": null,
+      "Payload": {
+        "BackButton": "true",
+        "SaveAndContinue": "true",
+        "SurveyProtection": "ByInvitation",
+        "BallotBoxStuffingPrevention": "true",
+        "NoIndex": "Yes",
+        "SecureResponseFiles": "true",
+        "SurveyExpiration": "on",
+        "SurveyTermination": "DefaultMessage",
+        "Header": "",
+        "Footer": "",
+        "ProgressBarDisplay": "None",
+        "PartialData": "+1 week",
+        "ValidationMessage": null,
+        "PreviousButton": " ← ",
+        "NextButton": " → ",
+        "SurveyTitle": ["REPLACE", "survey_title", "UNSW Election"],
+        "SkinLibrary": "unsw",
+        "SkinType": "MQ",
+        "Skin": "unsw_2",
+        "NewScoring": 1,
+        "EOSMessage": "",
+        "ShowExportTags": "false",
+        "CollectGeoLocation": "false",
+        "SurveyMetaDescription": ["REPLACE", "survey_description", "An election."],
+        "PasswordProtection": "No",
+        "AnonymizeResponse": "Yes",
+        "Password": "",
+        "RefererCheck": "No",
+        "RefererURL": "http://",
+        "BallotBoxStuffingPreventionBehavior": "DefaultMessage",
+        "BallotBoxStuffingPreventionMessage": "",
+        "BallotBoxStuffingPreventionMessageLibrary": "",
+        "BallotBoxStuffingPreventionURL": null,
+        "RecaptchaV3": "false",
+        "ConfirmStart": false,
+        "AutoConfirmStart": false,
+        "RelevantID": "false",
+        "RelevantIDLockoutPeriod": "+30 days",
+        "UseCustomSurveyLinkCompletedMessage": null,
+        "SurveyLinkCompletedMessage": "",
+        "SurveyLinkCompletedMessageLibrary": "",
+        "ResponseSummary": "No",
+        "EOSMessageLibrary": "",
+        "EOSRedirectURL": "https://",
+        "EmailThankYou": "false",
+        "ThankYouEmailMessageLibrary": null,
+        "ThankYouEmailMessage": null,
+        "ValidateMessage": "false",
+        "ValidationMessageLibrary": null,
+        "InactiveSurvey": "DefaultMessage",
+        "PartialDeletion": null,
+        "PartialDataCloseAfter": "LastActivity",
+        "ActiveResponseSet": null,
+        "InactiveMessageLibrary": "",
+        "InactiveMessage": "",
+        "AvailableLanguages": {
+          "EN": []
+        },
+        "SurveyLinkExpirationMessageType": "DefaultMessage",
+        "SurveyLinkExpirationMessage": "",
+        "SurveyLinkExpirationMessageLibrary": "",
+        "ProtectSelectionIds": true
+      }
+    },
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "SCO",
+      "PrimaryAttribute": "Scoring",
+      "SecondaryAttribute": null,
+      "TertiaryAttribute": null,
+      "Payload": {
+        "ScoringCategories": [],
+        "ScoringCategoryGroups": [],
+        "ScoringSummaryCategory": null,
+        "ScoringSummaryAfterQuestions": 0,
+        "ScoringSummaryAfterSurvey": 0,
+        "DefaultScoringCategory": null,
+        "AutoScoringCategory": null
+      }
+    },
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "PROJ",
+      "PrimaryAttribute": "CORE",
+      "SecondaryAttribute": null,
+      "TertiaryAttribute": "1.1.0",
+      "Payload": {
+        "ProjectCategory": "CORE",
+        "SchemaVersion": "1.1.0"
+      }
+    },
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "STAT",
+      "PrimaryAttribute": "Survey Statistics",
+      "SecondaryAttribute": null,
+      "TertiaryAttribute": null,
+      "Payload": {
+        "MobileCompatible": true,
+        "ID": "Survey Statistics"
+      }
+    },
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "QC",
+      "PrimaryAttribute": "Survey Question Count",
+      "SecondaryAttribute": ["REPLACE", "question_count", 5],
+      "TertiaryAttribute": null,
+      "Payload": null
+    }
+  ]
+}

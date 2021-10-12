@@ -1,0 +1,43 @@
+    {
+      "SurveyID": "SV_bsE2ISiwnAAAAAA",
+      "Element": "SQ",
+      "PrimaryAttribute": ["REPLACE", "question_id", "QID1"],
+      "SecondaryAttribute": ["REPLACE", "question_text", "Who do we pick?"],
+      "TertiaryAttribute": null,
+      "Payload": {
+        "QuestionText": ["REPLACE", "question_text", "Who do we pick?"],
+        "DefaultChoices": false,
+        "DataExportTag": ["REPLACE", "data_export_tag", "Q1"]
+        "QuestionID":  ["REPLACE", "question_id", "QID1"],
+        "QuestionType": "RO",
+        "Selector": "VR",
+        "SubSelector": "TX",
+        "DataVisibility": {
+          "Private": false,
+          "Hidden": false
+        },
+        "Configuration": {
+          "QuestionDescriptionOption": "UseText"
+        },
+        "QuestionDescription": ["REPLACE", "question_text", "Who do we pick?"],
+        "Choices": ["REPLACE", "choices", []],
+        "ChoiceOrder": ["REPLACE", "choices_order", []],
+        "Validation": {
+          "Settings": {
+            "ForceResponse": "OFF",
+            "Type": "ConsecutiveNumberRange",
+            "MinConsecutiveChoices": "1",
+            "MaxConsecutiveChoices": ["REPLACE", "max_choices", 1]
+          }
+        },
+        "GradingData": [],
+        "Language": [],
+        "NextChoiceId": ["REPLACE", "next_choice", ""],
+        "NextAnswerId": 1,
+        "Randomization": {
+          "Advanced": null,
+          "TotalRandSubset": "",
+          "Type": "All"
+        }
+      }
+    }
