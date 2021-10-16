@@ -7,7 +7,7 @@
       "Payload": {
         "QuestionText": ["REPLACE", "question_text", "Who do we pick?"],
         "DefaultChoices": false,
-        "DataExportTag": ["REPLACE", "data_export_tag", "Q1"]
+        "DataExportTag": ["REPLACE", "data_export_tag", "Q1"],
         "QuestionID":  ["REPLACE", "question_id", "QID1"],
         "QuestionType": "RO",
         "Selector": "VR",

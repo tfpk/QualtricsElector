@@ -77,10 +77,12 @@ function create_qualtrics_file(metadata, positions, candidates) {
     // ]
     //
     // So we just generate it.
-    metadata['question_blocks'] = positions.map((_, i) => ({
+    metadata['question_blocks'] = positions.map((_, i) => ([{
         "Type": "Question",
         "QuestionID": `QID${i + 1}`,
-    }));
+    }])).reduce((prev, curr) => {
+        return [...prev, {"Type": "Page Break"}, ...curr]
+    });
 
     // Now get the QSF files we need
     const qsfBaseFile = fs.readFileSync(__dirname + '/qsf_components/SurveyBase.qsf', 'utf-8');
@@ -104,7 +106,7 @@ function create_qualtrics_file(metadata, positions, candidates) {
 
         const question = replace_REPLACE_with_properties(qsfQuestion, {
             question_id: `QID${i + 1}`,
-            data_export_tag: `Q${i + 1}`,
+            data_export_tag: position.code,
             question_text: position.question,
             choices: formatChoicesForQualtrics(positionCandidates.map(format_choice)),
             choices_order: positionCandidates.map((_, i) => i + 1),
@@ -114,9 +116,7 @@ function create_qualtrics_file(metadata, positions, candidates) {
             next_choice: positionCandidates.length + 1,
         })
 
-        if (i == 0) {
-            question["Payload"]["QuestionJS"] = "Qualtrics.SurveyEngine.addOnload(function()\n{\n\t/*Place your JavaScript here to run when the page loads*/\n\n});\n\nQualtrics.SurveyEngine.addOnReady(function()\n{\n\tjQuery(\".sturep-info\").map(function(i) {\n        let me = this;\n        me.hide();\n        let node = document.createElement(\"button\");\n        node.style=\"margin-top: 6px; margin-botom: 6px;\";\n        node.innerText = \"Show/Hide Description\";\n\t\tnode.onclick = function () {\n             me.toggle();\n        }\n        me.before(node);\n\t})\n\n});\n\nQualtrics.SurveyEngine.addOnUnload(function()\n{\n\t/*Place your JavaScript here to run when the page is unloaded*/\n\n});";
-        }
+        question["Payload"]["QuestionJS"] = "Qualtrics.SurveyEngine.addOnload(function()\n{\n\t/*Place your JavaScript here to run when the page loads*/\n\n});\n\nQualtrics.SurveyEngine.addOnReady(function()\n{\n\tjQuery(\".sturep-info\").map(function(i) {\n        let me = this;\n        me.hide();\n        let node = document.createElement(\"button\");\n        node.style=\"margin-top: 6px; margin-botom: 6px;\";\n        node.innerText = \"Show/Hide Description\";\n\t\tnode.onclick = function () {\n             me.toggle();\n        }\n        me.before(node);\n\t})\n\n});\n\nQualtrics.SurveyEngine.addOnUnload(function()\n{\n\t/*Place your JavaScript here to run when the page is unloaded*/\n\n});";
 
         return question
 
@@ -126,6 +126,12 @@ function create_qualtrics_file(metadata, positions, candidates) {
 
     return qsfWithData;
 
+}
+
+function to_UTC7(date) {
+    const d = new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: "Etc/GMT-7"}));
+    const p = (x) => (0 <= x && x < 10) ? `0${x}` : x;
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours() + 1)}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
 }
 
 
@@ -147,6 +153,9 @@ function qualtrics_setup(folderPath) {
 
     // slice removes the header row.
     const metadata = Object.fromEntries(metadataParsed.data.slice(1));
+
+    metadata['start_date'] = to_UTC7(metadata['start_date']);
+    metadata['end_date'] = to_UTC7(metadata['end_date']);
 
     const positionsFile = fs.readFileSync(folderPath + '/' + POSITIONS_FILE, 'utf-8');
     const positionsParsed = pp.parse(positionsFile, parserConfig);
