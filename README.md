@@ -14,3 +14,21 @@ Welcome to this complete guide for how to setup a free election for a UNSW socie
 10. Wait for results
 
 [More instructions to follow once the election is done]
+
+## Survey Release checklist
+
+1. Check you have the correct number of candidates for each position (you didn't miss anyone out)
+2. Check all links on the survey are correct
+3. Check the survey randomizes itself.
+4. Check the release/response dates are correct.
+5. Check that you can submit a valid ballot, a ballot with some votes misssing, and you can't submit an invalid ballot
+
+## Email template
+
+```
+Dear CSE Student,
+
+Voting has now opened for the CSESoc 2022 Executive Elections. Voting will be open from Now until Sunday October 17th at 23:59:59. Results will be annouced at CSESoc's Annual General Meeting, which is Monday October 18th at 6pm (https://www.facebook.com/events/376129317565706/).
+
+Follow this link to Vote:
+```
